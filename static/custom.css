@@ -1,0 +1,227 @@
+
+body {
+  background-color: #ececec;
+  color: 	#5c5c5c;
+}
+
+
+.header {
+  background-color: white;
+  padding: 0;
+  margin: 0 0 10px 0;
+  border-bottom: 2px solid #15ddd8;
+}
+
+.header h1 {
+  padding: 10px 20px;
+  margin: 0;
+  text-align: left;
+  color:	#15ddd8;
+}
+
+.btn {
+  background-color: white;
+  text-decoration: none;
+  border: 2px solid #15ddd8;
+  color: #15ddd8;
+  border-radius: 10%;
+  padding: 5px;
+  font-size: 21px;
+  margin: 5px;
+}
+
+.btn:hover {
+  color: #45cbf2;
+  cursor: pointer;
+  border: 2px solid #45cbf2;
+}
+
+.btn-lg {
+  font-size: 1.5em;
+}
+
+
+form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10%;
+
+}
+
+form input  {
+  width: 90%;
+  padding: 5px 5px;
+  margin: 5px 0 20px 0;
+  border: none;
+  border-bottom: 2px solid #15ddd8;
+  font-size: 18px;
+  }
+
+form label {
+  font-size: 1em;
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 700px;
+  width: 100%;
+}
+
+.modal input {
+  width: 100%;
+  border: none;
+  padding: 10px 0 0 0;
+  font-size: 23px;
+  margin: 0;
+  border-bottom: 2px solid #15ddd8;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+     opacity: 0.3 !important;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.title {
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+
+.task-item {
+  margin-top: 0;
+  padding: 0 5px;
+  font-size: 20px;
+  position: relative;
+}
+
+.task-item p {
+  padding: 20px 0;
+  transition: .3s ease;
+  margin: 5px 0 0 0;
+}
+
+.task-item .overlay {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  transition: 0.5s ease;
+}
+
+.task-item .overlay a {
+  padding: 0 10px;
+  font-size: 35px;
+  color: #15ddd8;
+  font-weight: bold;
+  pointer-events: none;
+  transition-delay: 0.1s;
+  transition: 0.1s ease;
+}
+
+.task-item .overlay p {
+  margin: 0;
+  padding: 0 10x 0 10px;
+  font-size: 16px;
+  padding-right: 20px;
+  transition: 0.1s ease;
+}
+
+.task-item i {
+  padding: 0 10px;
+  color: 	#70f2ad;
+  text-wrap: wrap;
+  margin: 0;
+}
+
+
+.task-item:hover p {
+  opacity: 0.2;
+}
+
+.task-item:hover .overylay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.task-item:hover .overlay a {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+}
+.task-item:hover .overlay p {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.message {
+  font-size: 20px;
+  padding: 10px;
+  width: 80%;
+  margin-left: 10px;
+  border-radius: 2px;
+}
+
+@media only screen and (max-width: 960px) {
+    .message {
+        width: 80%;
+    }
+}
+
+.info {
+  background-color: #e0f4f9;
+  color: #4b818e;
+}
+
+.success {
+  background-color: #c5f7ec;
+  color: #45c661;
+}
+
+
+.error {
+  background-color: #ffb7b7;
+  color: #ed3d3d;
+}
+
+
+.tab {
+  font-size: 20px;
+  border-bottom: 3px solid #f2f2f2;
+  text-decoration: none;
+  padding: 5px 20px;
+  float: left;
+  clear: right;
+  font-size: 20px;
+}
+
+.tab:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+
+.active {
+  border-bottom: 3px solid #70f2ad;
+}
+
+.tab-content {
+  clear: both;
+  display: none;
+}
+
+.active-content {
+  display: block;
+}

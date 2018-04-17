@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="three columns"><p style="color: transparent;">
+        filler
+        </p></div>
+
+      <div class="six columns">
+
+          <h1 style="text-align: center; margin-bottom: 10px;">Sign up</h1>
+          <form method="POST" action="/signup">
+            {% for message in get_flashed_messages() %}
+              <p class="info">{{ message }}</p>
+            {% endfor %}
+            {{ form.hidden_tag() }}
+            {{ form.username.label }} {{ form.username(size=15) }}
+            {{ form.password.label }} {{ form.password(size=15) }}
+            <input class="btn" type="submit" value="Sign up">
+          </form>
+      </div>
+
+      <div class="three columns"></div>
+    </div>
+  </div>
+{% endblock %}

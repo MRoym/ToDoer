@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To doer</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- At.js for autocompletion -->
+    <link href="{{ url_for('static', filename='jquery.atwho.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='jquery.caret.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery.atwho.min.js') }}"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <!-- Custom -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='custom.css') }}">
+    <script src="{{ url_for('static', filename='tasks.js') }}"></script>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>To Doer
+    {% if session["username"] %}
+      <span style="float: right;"><a class="btn" href="\logout">Logout</a></span>
+    {% else %}
+      <span style="float: right;"><a class="btn" href="\signup">Sign up</a></span>
+      <span style="float: right;"><a class="btn" href="\login">Login</a></span>
+    {% endif %}
+
+    </h1>
+  </div>
+
+
+<div style="clear: both;">
+
+
+  {% block content %}
+
+
+  {% endblock %}
+
+  </div>
+</body>
+</html>

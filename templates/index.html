@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row" style="padding-top: 20px;">
+
+      <div class="one column"></div>
+
+      <div class="eleven columns" style="background-color: white;">
+
+        <div class="title">
+          <h1 style="color: #15ddd8;">Your To Dos
+            <span style="float: right; padding-right:10px;"><a id="modal-form" class="btn">Add</a></span>
+          </h1>
+        </div>
+
+          {% for message in get_flashed_messages(category_filter=["Error"]) %}
+            <p class="message error">{{ message }}</p>
+          {% endfor %}
+
+          {% for message in get_flashed_messages(category_filter=["Success"]) %}
+            <p class="message success">{{ message }}</p>
+          {% endfor %}
+
+          {% for message in get_flashed_messages(category_filter=["Info"]) %}
+            <p class="message info">{{ message }}</p>
+          {% endfor %}
+
+          <div class="modal">
+            <form id="form" method="post" action="/add">
+              <input id="at-input" name="task" type="text" autocomplete="off" placeholder="Your task #group">
+            </form>
+
+          </div>
+
+        {% if groups %}
+        {% for k,v in groups.items() %}
+        <div class="tab">
+          <a class="tablink" onclick="openTab(event, '{{k}}')">{{k}}</a>
+        </div>
+        {% endfor %}
+
+        {% for k,v in groups.items() %}
+          <div id="{{k}}" class="tab-content">
+          {% for task in v %}
+              <div class="task-item">
+                  <p><i class="fa fa-circle-o" aria-hidden="true"></i>{{ task.task }}</p>
+                  <div class="overlay">
+                    <a href='complete/{{ task.id }}'><i class='fa fa-check-circle-o' aria-hidden='true'></i></a><a href="delete/{{ task.id }}"><i style="color: #fc5555;" class='fa fa-trash-o' aria-hidden='true'></i></a>
+                    <p class="pull-right" style="margin: 0;">{{task.date_created|timesince}}</p>
+                  </div>
+            </div>
+          {% endfor %}
+          </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
